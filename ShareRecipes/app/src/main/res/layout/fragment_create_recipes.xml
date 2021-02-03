@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/include_toolbar"
+        layout="@layout/layout_toolbar"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nested"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:paddingTop="24dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                style="@style/TextInputLayoutBordered"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="8dp"
+                android:padding="16dp">
+                <TextView
+                    style="@style/TextInputHintStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="4dp"
+                    android:text="@string/create_recipes_name" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etName"
+                    style="@style/TextInputEditTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionDone"
+                    android:fontFamily="@font/roboto_bold"
+                    android:inputType="text" />
+            </LinearLayout>
+            <LinearLayout
+                style="@style/TextInputLayoutBordered"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="8dp"
+                android:padding="16dp">
+                <TextView
+                    style="@style/TextInputHintStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="4dp"
+                    android:text="@string/create_recipes_description" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etDescription"
+                    style="@style/TextInputEditTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionDone"
+                    android:minLines="8"
+                    android:gravity="top"
+                    android:fontFamily="@font/roboto_bold"
+                    android:inputType="textMultiLine" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/TextInputHintStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="4dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/create_recipes_ingradients" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvComponents"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="16dp"
+                android:clipToPadding="false"
+                android:nestedScrollingEnabled="false"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:id="@+id/btnSelectComponents"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/select_components_button"
+                android:elevation="10dp"
+                style="@style/ButtonEmpty"
+                android:layout_marginBottom="24dp"/>
+
+            <LinearLayout
+                style="@style/TextInputLayoutBordered"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="8dp"
+                android:padding="16dp">
+                <TextView
+                    style="@style/TextInputHintStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="4dp"
+                    android:text="@string/create_recipes_recipes" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etRecipes"
+                    style="@style/TextInputEditTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionDone"
+                    android:minLines="8"
+                    android:gravity="top"
+                    android:fontFamily="@font/roboto_bold"
+                    android:inputType="textMultiLine" />
+            </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvSteps"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:clipToPadding="false"
+                android:nestedScrollingEnabled="false"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:id="@+id/btnAddStep"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/create_recipes_add_step"
+                android:elevation="10dp"
+                style="@style/ButtonEmpty"
+                android:layout_marginBottom="16dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:id="@+id/btnCreate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/create_recipes_button"
+                android:elevation="10dp"
+                style="@style/ButtonSolid"
+                android:layout_marginBottom="12dp"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <include
+        layout="@layout/layout_loading_container"/>
+
+</LinearLayout>

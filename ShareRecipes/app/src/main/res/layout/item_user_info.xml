@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/loadingContent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.card.MaterialCardView
+        android:layout_marginTop="64dp"
+        android:layout_width="108dp"
+        android:layout_height="108dp"
+        app:cardCornerRadius="54dp"
+        android:layout_gravity="center_horizontal"
+        app:cardElevation="0dp"
+        app:strokeWidth="4dp"
+        app:strokeColor="@color/colorAccent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/ivAvatar"
+                android:layout_width="94dp"
+                android:layout_height="94dp"
+                android:background="@drawable/ic_splashicon"
+                android:scaleType="centerCrop"
+                app:riv_corner_radius="50dp"
+                app:riv_mutate_background="true"
+                app:riv_oval="true" />
+            <ProgressBar
+                android:id="@+id/imageLoadProgressBar"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:visibility="gone"/>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24dp"
+        android:text="leon"
+        android:gravity="center"
+        android:textColor="@color/colorTextPrimary"
+        android:textSize="24sp"
+        android:fontFamily="@font/roboto_regular"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/colorBorder"/>
+</LinearLayout>

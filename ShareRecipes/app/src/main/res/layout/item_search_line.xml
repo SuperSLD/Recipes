@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.jutter.sharerecipes.ui.views.SearchLineView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/etSearch"
+    style="@style/TextInputLayoutBordered"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="24dp"
+    android:layout_marginEnd="24dp"
+    android:layout_marginBottom="8dp"
+    android:textSize="16sp"
+    android:inputType="textPersonName"
+    android:textColorHint="@color/colorTextHint"
+    android:gravity="center_vertical|top"
+    android:paddingTop="14dp" />

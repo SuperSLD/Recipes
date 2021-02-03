@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/include_toolbar"
+        layout="@layout/layout_toolbar_search"/>
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            layout="@layout/layout_user_recipes_shimmer"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvRecipes"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="24dp"
+            android:paddingBottom="100dp"
+            android:clipToPadding="false"/>
+
+        <ImageView
+            android:id="@+id/imEmpty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_finances"
+            android:visibility="gone"/>
+
+        <include
+            layout="@layout/layout_loading_container"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btnAddNote"
+            android:layout_width="62dp"
+            android:layout_height="62dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="24dp"
+            android:layout_gravity="end|bottom"
+            app:cardBackgroundColor="@color/colorAccent"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="31dp">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                app:srcCompat="@drawable/ic_add"
+                android:tint="@color/colorTextWhite"
+                android:layout_gravity="center"/>
+        </com.google.android.material.card.MaterialCardView>
+
+    </FrameLayout>
+</LinearLayout>

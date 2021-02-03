@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="260dp"
+    android:layout_height="127dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginBottom="8dp"
+    android:clipChildren="false"
+    app:cardCornerRadius="@dimen/radiusNormal"
+    app:cardElevation="16dp"
+    app:cardBackgroundColor="@color/colorPrimary">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tape_open_user_recipes_title"
+            android:textColor="@color/colorTextWhite"
+            android:fontFamily="@font/roboto_bold"
+            android:lines="1"
+            android:textSize="20sp"/>
+        <TextView
+            android:id="@+id/tvDescription"
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tape_open_user_recipes_subtitle"
+            android:maxLength="48"
+            android:lines="2"
+            android:textColor="@color/colorTextWhite"
+            android:fontFamily="@font/roboto_regular"
+            android:textSize="14sp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="end|center_vertical">
+            <TextView
+                android:id="@+id/tvLikeCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3543"
+                android:textColor="@color/colorTextWhite"
+                android:fontFamily="@font/roboto_bold"
+                android:textSize="18sp"
+                android:gravity="center_vertical"
+                android:paddingEnd="8dp"/>
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:tint="@color/colorTextWhite"
+                app:srcCompat="@drawable/ic_like"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

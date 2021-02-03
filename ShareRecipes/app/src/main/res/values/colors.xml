@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary -->
+    <color name="colorPrimary">#32AF91</color>
+    <color name="colorPrimarySecondary">#32AF91</color>
+    <color name="colorPrimaryLite">#6CD3BA</color>
+    <color name="colorAccent">#32AF91</color>
+    <color name="colorAccentLite">#79D1BC</color>
+
+    <color name="colorBackground">#FFFFFF</color>
+    <color name="colorBackgroundSecondary">#FFFFFF</color>
+
+    <!-- Text -->
+    <color name="colorTextPrimary">#FF000000</color>
+    <color name="colorTextHint">#A6A6A6</color>
+    <color name="colorTextRed">#E44C4C</color>
+    <color name="colorTextHintSecond">#D0D0D0</color>
+    <color name="colorTextWhite">#FFFFFF</color>
+
+    <!-- Navigation -->
+    <color name="colorBottomNavigation">#A6A6A6</color>
+
+    <!-- Gradient -->
+    <color name="colorGradientTop">#C7ACFF</color>
+
+    <!-- Button -->
+    <color name="colorButtonDisabled">#C8C7CC</color>
+
+    <!-- Border -->
+    <color name="colorBorder">#E9E9E9</color>
+
+    <!-- Shimmer -->
+    <color name="colorShimmerFirst">#E9E9E9</color>
+    <color name="colorShimmerSecond">#C8C8C8</color>
+
+
+    <!-- Other -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="colorStatusBar">#7AF0F2F5</color>
+    <color name="colorNavigationBar">#7AF0F2F5</color>
+</resources>

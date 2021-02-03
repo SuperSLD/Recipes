@@ -1,0 +1,82 @@
+<resources>
+    <string name="app_name">Share Recipes</string>
+
+    <!-- loading container -->
+    <string name="loading_err_title">При загрузке произошла ошибка</string>
+    <string name="loading_err_button">Перезагрузить</string>
+
+    <!-- AUTH -->
+    <!-- navigation -->
+    <string name="start_title_morning">Дорое утро</string>
+    <string name="start_title_day">Дорый день</string>
+    <string name="start_title_evening">Дорый вечер</string>
+    <string name="start_title_night">Дорой ночи</string>
+    <string name="start_description">Вы зашли в приложение где каждый желающий может поделиться свои рецептом и найти что-то новое.</string>
+    <string name="start_login">Войти</string>
+    <string name="start_register">Зарегистрироваться</string>
+
+    <!-- fragment login -->
+    <string name="login_title">Вход в приложение</string>
+    <string name="login_description">Не сообщяйте никому свои данные для авторизации.</string>
+    <string name="login_login_hint">Логин</string>
+    <string name="login_password_hint">Пароль</string>
+    <string name="login_button">Войти</string>
+
+    <!-- fragment registration -->
+    <string name="registration_title">Регистрация</string>
+    <string name="registration_description">Придумайте себе пароль и логин для входа, чтобы мы могли вас узнавать на других устройствах. </string>
+    <string name="registration_login_hint">Логин</string>
+    <string name="registration_password_hint">Пароль</string>
+    <string name="registration_button">Заригестрироваться</string>
+
+    <!-- MAIN -->
+    <!-- TAPE -->
+    <!-- navigation -->
+    <string name="navigation_list">Лента</string>
+    <string name="navigation_profile">Профиль</string>
+
+    <!-- fragment tape -->
+    <string name="tapes_search_hint">Поиск</string>
+    <string name="tape_user_recipes">Ваши рецепты</string>
+    <string name="tape_top_recipes">Самые популярные</string>
+    <string name="tape_rec_recipes">Ваши рекомендации</string>
+    <string name="tape_open_user_recipes_title">Перейти к вашим рецептам</string>
+    <string name="tape_open_user_recipes_subtitle">Создавайте рецепты которые увидят все желающие</string>
+    <string name="tape_search_by_ingradients">Поиск по инградиентам</string>
+    <string name="search_by_ingradients_title">Поиск по инградиентам</string>
+
+
+    <!-- user recipes -->
+    <string name="user_recipes_title">Ваши рецепты</string>
+    <string name="recipes_detail_ingradients">Необходимые продукты:</string>
+    <string name="recipes_detail_recipes">Приготовление:</string>
+    <string name="recipes_detail_button_like">Мне нравится</string>
+    <string name="recipes_detail_step_title">Этап приготовления</string>
+
+    <!-- create recipes -->
+    <string name="create_recipes_title">Добавление рецепта</string>
+    <string name="create_recipes_name">Название</string>
+    <string name="create_recipes_description">Описание</string>
+    <string name="create_recipes_ingradients">Инградиенты:</string>
+    <string name="create_recipes_recipes">Приготовление</string>
+    <string name="create_recipes_button">Добавить</string>
+    <string name="create_recipes_add_step">Добавить шаг</string>
+
+    <!-- select components -->
+    <string name="select_components_title">Поиск продуктов</string>
+    <string name="select_components_button">Выбрать</string>
+
+    <!-- PROFILE -->
+    <!-- fragment profile -->
+    <string name="profile_my_recipes">Мои рецепты</string>
+    <string name="profile_settings">Настройки</string>
+    <string name="profile_logout">Выйти</string>
+    <string name="profile_photo_is_update">Фотография успешно обновлена</string>
+
+    <!-- photo bs fragment -->
+    <string name="photo_bs_select_way">Выберите способ</string>
+    <string name="photo_bs_galery">Галерея</string>
+    <string name="photo_bs_camera">Камера</string>
+    <string name="photo_bs_back">Отмена</string>
+
+</resources>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <ImageView
+        android:layout_width="256dp"
+        android:layout_height="256dp"
+        app:srcCompat="@drawable/ic_medicines"/>
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_width="match_parent"
+        android:gravity="start"
+        android:layout_height="wrap_content"
+        android:text="@string/start_title_morning"
+        android:textColor="@color/colorTextPrimary"
+        android:textSize="@dimen/textTitle"
+        android:layout_marginTop="36dp"/>
+
+    <TextView
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_width="match_parent"
+        android:gravity="start"
+        android:layout_height="wrap_content"
+        android:text="@string/start_description"
+        android:textColor="@color/colorTextHint"
+        android:textSize="@dimen/textNormalMin"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="28dp"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/start_login"
+        android:elevation="10dp"
+        style="@style/ButtonSolid"
+        android:layout_marginBottom="12dp"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:id="@+id/btnRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/start_register"
+        android:elevation="10dp"
+        style="@style/ButtonEmpty"/>
+</LinearLayout>

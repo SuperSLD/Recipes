@@ -38,6 +38,8 @@ class ProfileFragment : BaseFragment(R.layout.fragment_profile), ProfileView, Im
     private val imagePicker by lazy { ImagePicker(this) }
     private val cameraPicker by lazy { CameraImagePicker(this) }
 
+    private var link = ""
+
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
@@ -49,6 +51,10 @@ class ProfileFragment : BaseFragment(R.layout.fragment_profile), ProfileView, Im
 
         btnLogout.setOnClickListener {
             presenter.logout()
+        }
+
+        btnSettings.setOnClickListener {
+            presenter.share(link)
         }
 
         ivAvatar.setOnClickListener { checkStoragePermission() }
@@ -75,6 +81,7 @@ class ProfileFragment : BaseFragment(R.layout.fragment_profile), ProfileView, Im
     override fun showUser(user: UserHuman) {
         tvName.text = "@${user.name}"
         changeAvatar(user.image)
+        this.link = user.link
     }
 
     private fun checkStoragePermission() {

@@ -45,4 +45,10 @@
         <item name="android:textColor">@color/colorTextHint</item>
         <item name="android:fontFamily">@font/roboto_regular</item>
     </style>
+
+    <style name="BottomSheetTitle">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="fontFamily">@font/roboto_bold</item>
+    </style>
 </resources>

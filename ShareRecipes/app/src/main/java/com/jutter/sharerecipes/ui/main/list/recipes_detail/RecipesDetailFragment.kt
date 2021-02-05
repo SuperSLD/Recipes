@@ -64,6 +64,10 @@ class RecipesDetailFragment : BaseFragment(R.layout.fragment_recipes_detail), Re
             presenter.like(recipes.id)
         }
 
+        btnShare.setOnClickListener() {
+            presenter.share(recipes.link)
+        }
+
         btnUserList.setOnClickListener {
             presenter.openListByUser(recipes.user)
         }

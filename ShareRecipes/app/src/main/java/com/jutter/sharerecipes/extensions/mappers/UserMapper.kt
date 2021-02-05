@@ -7,6 +7,7 @@ fun UserResponse.toUserHuman(): UserHuman {
     return UserHuman(
             id = id,
             name = name,
-            image = image
+            image = image,
+            link = link
     )
 }

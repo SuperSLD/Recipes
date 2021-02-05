@@ -7,6 +7,8 @@ import com.arellomobile.mvp.InjectViewState
 import com.jutter.sharerecipes.Screens
 import com.jutter.sharerecipes.common.CiceroneHolder
 import com.jutter.sharerecipes.common.base.BaseView
+import com.jutter.sharerecipes.common.base.BottomSheetDialogController
+import com.jutter.sharerecipes.common.enums.BottomSheetDialogType
 import com.jutter.sharerecipes.comtrollers.BottomVisibilityController
 import com.jutter.sharerecipes.extensions.mappers.toRecipesHumanList
 import com.jutter.sharerecipes.models.server.LoginBody
@@ -34,6 +36,8 @@ class RecipesDetailPresenter : BasePresenter<RecipesDetailView>() {
 
     private val router: Router?
         get() = navigationHolder.currentRouter
+
+    private val bottomSheetDialogController: BottomSheetDialogController by inject()
 
     override fun attachView(view: RecipesDetailView?) {
         super.attachView(view)
@@ -64,6 +68,8 @@ class RecipesDetailPresenter : BasePresenter<RecipesDetailView>() {
     fun openListByUser(user: UserHuman) {
         router?.navigateTo(Screens.ListByUser(user))
     }
+
+    fun share(link: String) = bottomSheetDialogController.show(BottomSheetDialogType.SHARE, link)
 
     fun back() = router?.exit()
 }

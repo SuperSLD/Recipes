@@ -61,6 +61,10 @@ class ProfilePresenter : BasePresenter<ProfileView>() {
         listenPickPhoto()
     }
 
+    fun share(link: String) {
+        bottomSheetDialogController.show(BottomSheetDialogType.SHARE, link)
+    }
+
     fun photoPicker() {
         bottomSheetDialogController.show(BottomSheetDialogType.SELECT_PHOTO)
     }

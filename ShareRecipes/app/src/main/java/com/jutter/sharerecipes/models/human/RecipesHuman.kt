@@ -13,6 +13,7 @@ data class RecipesHuman (
         var recipes: String,
         var user: UserHuman,
         var steps: MutableList<StepHuman>,
+        var link: String,
 
         var like: Int
 ): Parcelable

@@ -1,4 +1,4 @@
-package com.jutter.sharerecipes.ui.photo
+package com.jutter.sharerecipes.ui.bs.photo
 
 import android.os.Bundle
 import com.arellomobile.mvp.presenter.InjectPresenter

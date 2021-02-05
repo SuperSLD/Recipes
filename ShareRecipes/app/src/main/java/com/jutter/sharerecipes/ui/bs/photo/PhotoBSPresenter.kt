@@ -1,9 +1,8 @@
-package com.jutter.sharerecipes.ui.photo
+package com.jutter.sharerecipes.ui.bs.photo
 
 import com.arellomobile.mvp.InjectViewState
 import com.jutter.sharerecipes.common.enums.PickPhotoType
 import com.jutter.sharerecipes.comtrollers.PickPhotoController
-import com.jutter.sharerecipes.ui.photo.PhotoBSView
 import com.raspisanie.mai.common.base.BasePresenter
 import org.koin.core.inject
 

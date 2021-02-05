@@ -19,8 +19,7 @@
         android:theme="@style/Theme.ShareRecipes"
         tools:replace="android:allowBackup"
         android:requestLegacyExternalStorage="true"
-        android:usesCleartextTraffic="true"
-        >
+        android:usesCleartextTraffic="true">
         <activity
             android:name=".ui.AppActivity"
             android:launchMode="singleTask"

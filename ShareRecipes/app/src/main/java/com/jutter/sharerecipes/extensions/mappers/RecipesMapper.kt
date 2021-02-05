@@ -16,7 +16,8 @@ fun RecipesResponse.toRecipesHuman(): RecipesHuman {
             ingradients = ingradients.toIngradientHumanList(),
             user = user.toUserHuman(),
             like = like,
-            steps = steps.toStepHumanList()
+            steps = steps.toStepHumanList(),
+            link = link
     )
 }
 

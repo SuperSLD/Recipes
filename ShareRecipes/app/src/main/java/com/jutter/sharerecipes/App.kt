@@ -33,4 +33,8 @@ class App : Application() {
     private fun initTimber() {
         Timber.plant(Timber.DebugTree())
     }
+
+    data class User(
+            var name: String
+    )
 }

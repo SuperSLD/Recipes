@@ -52,9 +52,13 @@ class ListByUserFragment : BaseFragment(R.layout.fragment_list_by_user), ListByU
 
         val user = arguments?.getParcelable<UserHuman>(ARG_USER)!!
 
-        setTittleToolBar(include_toolbar, R.string.user_recipes_title, R.drawable.ic_arrow_back, 0, 0)
+        setTittleToolBar(include_toolbar, R.string.user_recipes_title, R.drawable.ic_arrow_back, R.drawable.ic_reply_reverse, 0)
         with(include_toolbar) {
             icClose.setOnClickListener { onBackPressed() }
+
+            icFirst.setOnClickListener {
+                presenter.share(user.link)
+            }
 
             tvTitle.text = "@${user.name}"
         }

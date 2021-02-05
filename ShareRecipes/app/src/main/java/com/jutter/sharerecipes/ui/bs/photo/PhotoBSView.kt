@@ -1,4 +1,4 @@
-package com.jutter.sharerecipes.ui.photo
+package com.jutter.sharerecipes.ui.bs.photo
 
 import com.arellomobile.mvp.MvpView
 

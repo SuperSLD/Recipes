@@ -8,6 +8,7 @@ data class RecipesResponse (
         var recipes: String,
         var user: UserResponse,
         var steps: MutableList<StepResponse>,
+        var link: String,
 
         var like: Int
 )

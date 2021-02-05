@@ -7,5 +7,6 @@ import kotlinx.android.parcel.Parcelize
 data class UserHuman (
         var id: Int,
         var name: String,
-        var image: String
+        var image: String,
+        var link: String
 ): Parcelable

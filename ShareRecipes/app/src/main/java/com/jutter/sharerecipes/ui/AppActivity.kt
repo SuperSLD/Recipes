@@ -1,6 +1,8 @@
 package com.jutter.sharerecipes.ui
 
+import android.content.Intent
 import android.graphics.Rect
+import android.net.Uri
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -16,6 +18,7 @@ import com.jutter.sharerecipes.common.base.BaseFragment
 import com.jutter.sharerecipes.extensions.getIsDayTheme
 import com.jutter.sharerecipes.extensions.hideKeyboard
 import net.yslibrary.android.keyboardvisibilityevent.util.UIUtil.hideKeyboard
+import timber.log.Timber
 
 class AppActivity : AppCompatActivity() {
     private val currentFragment: BaseFragment?
@@ -29,6 +32,8 @@ class AppActivity : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.layout_container)
+
+        handleIntent(intent)
 
         if (savedInstanceState == null) {
             supportFragmentManager
@@ -77,5 +82,13 @@ class AppActivity : AppCompatActivity() {
             }
         }
         return super.dispatchTouchEvent(event)
+    }
+
+    private fun handleIntent(intent: Intent?) {
+        val appLinkAction: String? = intent?.action
+        val appLinkData: Uri? = intent?.data
+
+        Timber.d("handleIntent: $appLinkAction")
+        Timber.d("handleIntent: ${appLinkData.toString()}")
     }
 }

@@ -49,7 +49,7 @@ class SearchByIngradientsFragment : BaseFragment(R.layout.fragment_search_by_ing
 
         with(rvHeader) {
             adapter = this@SearchByIngradientsFragment.headerAdapter
-            layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
+            layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         }
         showList(mutableListOf())
         with(rvRecipes) {

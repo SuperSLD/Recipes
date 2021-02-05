@@ -101,9 +101,7 @@ class SearchByIngradientsPresenter : BasePresenter<SearchByIngradientsView>() {
     fun removeIngradient(ingradientHuman: IngradientHuman) {
         selectedIngradients.remove(ingradientHuman)
         viewState.showSelectedIngradients(selectedIngradients)
-        if (selectedIngradients.size > 0) {
-            findList()
-        }
+        findList()
     }
 
     fun selectIngradients() {

@@ -35,7 +35,7 @@ interface Api {
     fun userRecipes(): Single<DataWrapper<MutableList<RecipesResponse>>>
 
     @GET("recipes/byuser/{id}")
-    fun recipesByUser(@Path("id") id: Int): Single<DataWrapper<MutableList<RecipesResponse>>>
+    fun recipesByUser(@Path("id") id: Int): Single<DataWrapper<ListByUserResponse>>
 
     @GET("recipes/searchbyuser/{text}")
     fun searchRecipesByUser(@Path("text") text: String): Single<DataWrapper<MutableList<RecipesResponse>>>
@@ -55,4 +55,7 @@ interface Api {
     @Multipart
     @POST("images/uploadprofile")
     fun uploadProfileImage(@Part image: MultipartBody.Part?): Single<DataWrapper<String>>
+
+    @GET("recipes/onerecipes/{id}")
+    fun oneRecipes(@Path("id") id: String): Single<DataWrapper<RecipesResponse>>
 }

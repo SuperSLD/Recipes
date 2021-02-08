@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.arellomobile.mvp.MvpView
 import com.arellomobile.mvp.presenter.InjectPresenter
@@ -12,6 +13,7 @@ import com.arellomobile.mvp.presenter.ProvidePresenter
 import com.jutter.sharerecipes.R
 import com.jutter.sharerecipes.common.base.BaseFragment
 import com.jutter.sharerecipes.common.base.BaseView
+import com.jutter.sharerecipes.models.human.ListByUserHuman
 import com.jutter.sharerecipes.models.human.RecipesHuman
 import com.jutter.sharerecipes.models.human.UserHuman
 import com.jutter.sharerecipes.ui.auth.start.StartPresenter
@@ -39,8 +41,10 @@ class ListByUserFragment : BaseFragment(R.layout.fragment_list_by_user), ListByU
     @InjectPresenter
     lateinit var presenter: ListByUserPresenter
 
+    private var link = ""
+
     @ProvidePresenter
-    fun providePresenter() = ListByUserPresenter(arguments?.getParcelable(ARG_USER)!!)
+    fun providePresenter() = ListByUserPresenter(arguments?.getInt(ARG_USER_ID)!!)
 
     private val adapter by lazy {
         ListByUserAdapter(presenter::selectRecipes)
@@ -50,17 +54,9 @@ class ListByUserFragment : BaseFragment(R.layout.fragment_list_by_user), ListByU
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        val user = arguments?.getParcelable<UserHuman>(ARG_USER)!!
-
-        setTittleToolBar(include_toolbar, R.string.user_recipes_title, R.drawable.ic_arrow_back, R.drawable.ic_reply_reverse, 0)
+        setTittleToolBar(include_toolbar, R.string.list_by_user_title_loading, R.drawable.ic_arrow_back, R.drawable.ic_reply_reverse, 0)
         with(include_toolbar) {
             icClose.setOnClickListener { onBackPressed() }
-
-            icFirst.setOnClickListener {
-                presenter.share(user.link)
-            }
-
-            tvTitle.text = "@${user.name}"
         }
 
         container.addSystemBottomPadding()
@@ -77,23 +73,28 @@ class ListByUserFragment : BaseFragment(R.layout.fragment_list_by_user), ListByU
         presenter.back()
     }
 
-    override fun showList(list: MutableList<RecipesHuman>) {
-        if (list.size != 0) {
-            adapter.addAll(list, list[0].user)
-            imEmpty.visibility = View.GONE
-            rvRecipes.visibility = View.VISIBLE
-        } else {
-            imEmpty.visibility = View.VISIBLE
-            rvRecipes.visibility = View.GONE
-        }
+    @SuppressLint("SetTextI18n")
+    override fun showList(list: ListByUserHuman) {
+        include_toolbar.tvTitle.text = "@${list.user.name}"
+        this.link = list.user.link
+        adapter.addAll(list.recipes, list.user)
+        imEmpty.visibility = View.GONE
+        rvRecipes.visibility = View.VISIBLE
     }
 
     override fun showErrorLoading() {
         loadingError.visibility = View.VISIBLE
         showShimmer(false)
+        with(include_toolbar) {
+            tvTitle.text = getString(R.string.list_by_user_title_error)
+        }
         loadingErrorButton.setOnClickListener {
             presenter.loadList()
         }
+    }
+
+    private val shareLambda = { _: View ->
+        presenter.share(link)
     }
 
     override fun toggleLoading(show: Boolean) {
@@ -101,11 +102,29 @@ class ListByUserFragment : BaseFragment(R.layout.fragment_list_by_user), ListByU
             showShimmer(true)
             rvRecipes.visibility = View.GONE
             loadingError.visibility = View.GONE
+
+            with(include_toolbar) {
+                icFirst.setOnClickListener(null)
+                icFirst.setColorFilter(
+                        ContextCompat.getColor(context, R.color.colorTextHint),
+                        android.graphics.PorterDuff.Mode.SRC_IN
+                )
+
+                tvTitle.text = getString(R.string.list_by_user_title_loading)
+            }
         } else {
             showShimmer(false)
             loadingProgressBar.visibility = View.GONE
             rvRecipes.visibility = View.VISIBLE
             loadingError.visibility = View.GONE
+
+            with(include_toolbar) {
+                icFirst.setOnClickListener(shareLambda)
+                icFirst.setColorFilter(
+                        ContextCompat.getColor(context, R.color.colorPrimary),
+                        android.graphics.PorterDuff.Mode.SRC_IN
+                )
+            }
         }
     }
 
@@ -120,15 +139,15 @@ class ListByUserFragment : BaseFragment(R.layout.fragment_list_by_user), ListByU
     }
 
     companion object {
-        private const val ARG_USER = "arg_user"
+        private const val ARG_USER_ID = "arg_user_id"
 
         fun create(
-            user: UserHuman
+            id: Int
         ): ListByUserFragment {
             val fragment = ListByUserFragment()
 
             val args = Bundle()
-            args.putParcelable(ARG_USER, user)
+            args.putInt(ARG_USER_ID, id)
             fragment.arguments = args
 
             return fragment

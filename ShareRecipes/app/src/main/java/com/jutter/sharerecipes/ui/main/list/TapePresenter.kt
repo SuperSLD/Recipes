@@ -6,7 +6,9 @@ import com.arellomobile.mvp.InjectViewState
 import com.arellomobile.mvp.MvpView
 import com.jutter.sharerecipes.Screens
 import com.jutter.sharerecipes.common.CiceroneHolder
+import com.jutter.sharerecipes.common.enums.DeeplinkType
 import com.jutter.sharerecipes.comtrollers.BottomVisibilityController
+import com.jutter.sharerecipes.comtrollers.DeeplinkOpenController
 import com.jutter.sharerecipes.extensions.mappers.toRecipesHumanList
 import com.jutter.sharerecipes.extensions.mappers.toRecommendationHuman
 import com.jutter.sharerecipes.models.human.RecipesHuman
@@ -24,6 +26,8 @@ class TapePresenter : BasePresenter<TapeView>() {
     private val navigationHolder: CiceroneHolder by inject()
     private val bottomVisibilityController: BottomVisibilityController by inject()
 
+    private val deeplinkOpenController: DeeplinkOpenController by inject()
+
     private val router: Router?
         get() = navigationHolder.currentRouter
 
@@ -34,6 +38,11 @@ class TapePresenter : BasePresenter<TapeView>() {
         super.attachView(view)
         bottomVisibilityController.show()
         loadRecommendation()
+    }
+
+    override fun onFirstViewAttach() {
+        super.onFirstViewAttach()
+        listenOpenDeeplink()
     }
 
     fun loadRecommendation() {
@@ -80,6 +89,28 @@ class TapePresenter : BasePresenter<TapeView>() {
             ).connect()
     }
 
+    private fun listenOpenDeeplink() {
+        deeplinkOpenController.state
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe(
+                        {
+                            if (!deeplinkOpenController.isOpened) {
+                                deeplinkOpenController.isOpened = true
+                                when(it.first) {
+                                    DeeplinkType.RECIPES -> openRecipesDeeplink(it.second as String)
+                                    DeeplinkType.PROFILE -> openListByUser(it.second as Int)
+                                }
+                            }
+                        },
+                        {
+                            Timber.e(it)
+                        }
+                ).connect()
+    }
+
+    private fun openListByUser(id: Int) = router?.navigateTo(Screens.ListByUser(id))
+    private fun openRecipesDeeplink(id: String) = router?.navigateTo(Screens.RecipesDetailById(id))
 
     fun searchByIngradients() = router?.navigateTo(Screens.SearchByIngradients)
     fun userRecipes() = router?.navigateTo(Screens.UserRecipes)

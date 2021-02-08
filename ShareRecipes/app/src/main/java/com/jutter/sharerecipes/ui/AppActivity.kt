@@ -15,19 +15,22 @@ import androidx.core.content.ContextCompat
 import com.jutter.sharerecipes.R
 import com.jutter.sharerecipes.Screens
 import com.jutter.sharerecipes.common.base.BaseFragment
+import com.jutter.sharerecipes.common.enums.DeeplinkType
+import com.jutter.sharerecipes.comtrollers.DeeplinkOpenController
 import com.jutter.sharerecipes.extensions.getIsDayTheme
 import com.jutter.sharerecipes.extensions.hideKeyboard
 import net.yslibrary.android.keyboardvisibilityevent.util.UIUtil.hideKeyboard
+import org.koin.android.ext.android.inject
 import timber.log.Timber
 
 class AppActivity : AppCompatActivity() {
     private val currentFragment: BaseFragment?
         get() = supportFragmentManager.findFragmentById(R.id.container) as? BaseFragment
 
+    private val deeplinkOpenController: DeeplinkOpenController by inject()
+
     override fun onCreate(savedInstanceState: Bundle?) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            initTransparent()
-        }
+        initTransparent()
         window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN)
 
         super.onCreate(savedInstanceState)
@@ -84,11 +87,39 @@ class AppActivity : AppCompatActivity() {
         return super.dispatchTouchEvent(event)
     }
 
+    /**
+     * Чтение данных из Диплинка.
+     */
     private fun handleIntent(intent: Intent?) {
         val appLinkAction: String? = intent?.action
         val appLinkData: Uri? = intent?.data
 
         Timber.d("handleIntent: $appLinkAction")
-        Timber.d("handleIntent: ${appLinkData.toString()}")
+        Timber.d("handleIntent: ${appLinkData?.getQueryParameter("type")}")
+        if (Intent.ACTION_VIEW == appLinkAction && appLinkData != null) {
+            when (appLinkData.getQueryParameter("type")) {
+                "profile" -> deeplinkOpenController.open(
+                        Pair(
+                                DeeplinkType.PROFILE,
+                                appLinkData.getQueryParameter("id")!!.toInt()
+                        )
+                )
+                "recipes" -> deeplinkOpenController.open(
+                        Pair(
+                                DeeplinkType.RECIPES,
+                                appLinkData.getQueryParameter("id")
+                        )
+                )
+            }
+            deeplinkOpenController.isOpened = false
+        }
+    }
+
+    /**
+     * Проверка входящего интента для перехода на новый скрин.
+     */
+    override fun onNewIntent(intent: Intent?) {
+        super.onNewIntent(intent)
+        handleIntent(intent)
     }
 }

@@ -34,4 +34,6 @@ class ApiService(private var api: Api) {
     fun searchRecipes(text: String) = api.searchRecipes(text)
 
     fun uploadProfileImage(image: MultipartBody.Part) = api.uploadProfileImage(image)
+
+    fun oneRecipes(id: String) = api.oneRecipes(id)
 }

@@ -10,6 +10,7 @@ import com.jutter.sharerecipes.common.base.BaseView
 import com.jutter.sharerecipes.common.base.BottomSheetDialogController
 import com.jutter.sharerecipes.common.enums.BottomSheetDialogType
 import com.jutter.sharerecipes.comtrollers.BottomVisibilityController
+import com.jutter.sharerecipes.extensions.mappers.toRecipesHuman
 import com.jutter.sharerecipes.extensions.mappers.toRecipesHumanList
 import com.jutter.sharerecipes.models.server.LoginBody
 import com.jutter.sharerecipes.server.ApiService
@@ -26,7 +27,9 @@ import ru.terrakok.cicerone.Router
 import timber.log.Timber
 
 @InjectViewState
-class RecipesDetailPresenter : BasePresenter<RecipesDetailView>() {
+class RecipesDetailPresenter(
+        private val recipesId: String?
+) : BasePresenter<RecipesDetailView>() {
 
     private val navigationHolder: CiceroneHolder by inject()
     private val bottomVisibilityController: BottomVisibilityController by inject()
@@ -42,6 +45,10 @@ class RecipesDetailPresenter : BasePresenter<RecipesDetailView>() {
     override fun attachView(view: RecipesDetailView?) {
         super.attachView(view)
         bottomVisibilityController.hide()
+
+        if (!recipesId.isNullOrEmpty()) {
+            loadRecipes(recipesId)
+        }
     }
 
     fun like(id: String) {
@@ -65,8 +72,30 @@ class RecipesDetailPresenter : BasePresenter<RecipesDetailView>() {
                 ).connect()
     }
 
+    fun loadRecipes(id: String) {
+        service.oneRecipes(id)
+                .map { if (it.success == true) it.data else error(it.message.toString()) }
+                .map { it?.toRecipesHuman() }
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .doOnSubscribe { viewState.toggleRecipesLoading(true) }
+                .doOnSuccess { viewState.toggleRecipesLoading(false) }
+                .doOnError {
+                    viewState.showErrorLoading()
+                    Toast.makeText(context, it.message.toString(), Toast.LENGTH_SHORT).show()
+                }
+                .subscribe(
+                        {
+                            viewState.showRecipes(it!!)
+                        },
+                        {
+                            Timber.e(it)
+                        }
+                ).connect()
+    }
+
     fun openListByUser(user: UserHuman) {
-        router?.navigateTo(Screens.ListByUser(user))
+        router?.navigateTo(Screens.ListByUser(user.id))
     }
 
     fun share(link: String) = bottomSheetDialogController.show(BottomSheetDialogType.SHARE, link)

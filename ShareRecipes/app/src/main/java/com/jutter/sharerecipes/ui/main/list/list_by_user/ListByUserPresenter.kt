@@ -10,6 +10,7 @@ import com.jutter.sharerecipes.common.base.BaseView
 import com.jutter.sharerecipes.common.base.BottomSheetDialogController
 import com.jutter.sharerecipes.common.enums.BottomSheetDialogType
 import com.jutter.sharerecipes.comtrollers.BottomVisibilityController
+import com.jutter.sharerecipes.extensions.mappers.toListByUserHuman
 import com.jutter.sharerecipes.extensions.mappers.toRecipesHumanList
 import com.jutter.sharerecipes.models.server.LoginBody
 import com.jutter.sharerecipes.server.ApiService
@@ -26,7 +27,7 @@ import timber.log.Timber
 
 @InjectViewState
 class ListByUserPresenter(
-    private val user: UserHuman
+    private val id: Int
 ) : BasePresenter<ListByUserView>() {
 
     private val navigationHolder: CiceroneHolder by inject()
@@ -51,9 +52,9 @@ class ListByUserPresenter(
     }
 
     fun loadList() {
-        service.recipesByUser(user.id)
+        service.recipesByUser(id)
                 .map { if (it.success == true) it.data else error(it.message.toString()) }
-                .map { it?.toRecipesHumanList() }
+                .map { it?.toListByUserHuman() }
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .doOnSubscribe { viewState.toggleLoading(true) }

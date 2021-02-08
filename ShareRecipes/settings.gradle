@@ -1,2 +1,3 @@
+include ':app:jutter_ui_kit'
 include ':app'
 rootProject.name = "ShareRecipes"

@@ -90,8 +90,12 @@ object Screens {
         override fun getFragment(): Fragment? = RecipesDetailFragment.create(recipes)
     }
 
-    data class ListByUser(var user: UserHuman): SupportAppScreen() {
-        override fun getFragment(): Fragment? = ListByUserFragment.create(user)
+    data class RecipesDetailById(var id: String): SupportAppScreen() {
+        override fun getFragment(): Fragment? = RecipesDetailFragment.create(id)
+    }
+
+    data class ListByUser(var id: Int): SupportAppScreen() {
+        override fun getFragment(): Fragment? = ListByUserFragment.create(id)
     }
 
     object SearchByIngradients: SupportAppScreen() {

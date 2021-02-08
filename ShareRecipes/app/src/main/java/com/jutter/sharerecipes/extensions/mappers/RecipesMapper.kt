@@ -1,9 +1,11 @@
 package com.jutter.sharerecipes.extensions.mappers
 
 import com.jutter.sharerecipes.models.human.IngradientHuman
+import com.jutter.sharerecipes.models.human.ListByUserHuman
 import com.jutter.sharerecipes.models.human.RecipesHuman
 import com.jutter.sharerecipes.models.human.RecommendationHuman
 import com.jutter.sharerecipes.models.server.IngradientResponse
+import com.jutter.sharerecipes.models.server.ListByUserResponse
 import com.jutter.sharerecipes.models.server.RecipesResponse
 import com.jutter.sharerecipes.models.server.RecommendationResponse
 
@@ -33,5 +35,12 @@ fun RecommendationResponse.toRecommendationHuman(): RecommendationHuman {
     return RecommendationHuman(
         popular = popular.toRecipesHumanList(),
         recommendation = recommendation.toRecipesHumanList()
+    )
+}
+
+fun ListByUserResponse.toListByUserHuman(): ListByUserHuman {
+    return ListByUserHuman(
+            user = user.toUserHuman(),
+            recipes = recipes.toRecipesHumanList()
     )
 }

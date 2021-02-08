@@ -2,11 +2,8 @@ package com.jutter.sharerecipes.di
 
 import com.jutter.sharerecipes.BuildConfig
 import com.jutter.sharerecipes.common.CiceroneHolder
-import com.jutter.sharerecipes.comtrollers.BottomVisibilityController
-import com.jutter.sharerecipes.comtrollers.ChangeBottomTabController
 import com.jutter.sharerecipes.common.base.BottomSheetDialogController
-import com.jutter.sharerecipes.comtrollers.IngradientsController
-import com.jutter.sharerecipes.comtrollers.PickPhotoController
+import com.jutter.sharerecipes.comtrollers.*
 import com.jutter.sharerecipes.server.TokenInterceptor
 import com.jutter.sharerecipes.server.Api
 import com.jutter.sharerecipes.server.ApiService
@@ -82,5 +79,9 @@ val appModule = module {
 
     single {
         PickPhotoController()
+    }
+
+    single {
+        DeeplinkOpenController()
     }
 }

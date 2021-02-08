@@ -63,6 +63,10 @@
     <string name="create_recipes_button">Добавить</string>
     <string name="create_recipes_add_step">Добавить шаг</string>
 
+    <!-- list by user fragment -->
+    <string name="list_by_user_title_loading">Зарузка...</string>
+    <string name="list_by_user_title_error">Ошибка</string>
+
     <!-- select components -->
     <string name="select_components_title">Поиск продуктов</string>
     <string name="select_components_button">Выбрать</string>

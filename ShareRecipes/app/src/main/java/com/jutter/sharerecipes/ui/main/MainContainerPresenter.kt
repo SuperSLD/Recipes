@@ -1,8 +1,10 @@
 package com.jutter.sharerecipes.ui.main
 
 import com.arellomobile.mvp.InjectViewState
+import com.jutter.sharerecipes.common.enums.DeeplinkType
 import com.jutter.sharerecipes.comtrollers.BottomVisibilityController
 import com.jutter.sharerecipes.comtrollers.ChangeBottomTabController
+import com.jutter.sharerecipes.comtrollers.DeeplinkOpenController
 import com.raspisanie.mai.common.base.BasePresenter
 import com.jutter.sharerecipes.ui.main.MainContainerView
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
@@ -15,6 +17,8 @@ class MainContainerPresenter : BasePresenter<MainContainerView>() {
 
     private val changeBottomTabController: ChangeBottomTabController by inject()
     private val bottomVisibilityController: BottomVisibilityController by inject()
+
+    private val deeplinkOpenController: DeeplinkOpenController by inject()
 
     override fun attachView(view: MainContainerView?) {
         super.attachView(view)
@@ -56,5 +60,4 @@ class MainContainerPresenter : BasePresenter<MainContainerView>() {
                 }
             ).connect()
     }
-
 }

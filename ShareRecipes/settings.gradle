@@ -1,2 +1,3 @@
-include ':app'
+include ':difcycler'
+include ':recipes'
 rootProject.name = "ShareRecipes"

@@ -1,7 +1,7 @@
-package com.jutter.difcycler.base
+package online.jutter.supersld.base
 
-import android.view.DragEvent
 import android.view.View
+import androidx.annotation.CallSuper
 import androidx.recyclerview.widget.RecyclerView
 
 /**
@@ -28,9 +28,11 @@ abstract class DFBaseHolder(itemView: View) : RecyclerView.ViewHolder(itemView) 
      * @param id идентификатор события указанный в адаптере.
      * @param data какой-то объект
      */
+    @CallSuper
     protected fun makeEvent(id: Int, data: Any?) {
         event(id, data)
     }
+    @CallSuper
     protected fun makeEvent(id: Int) {
         event(id, null)
     }
@@ -40,6 +42,7 @@ abstract class DFBaseHolder(itemView: View) : RecyclerView.ViewHolder(itemView) 
      *
      * @param event калбек из фабрики.
      */
+    @CallSuper
     fun onEvent(event: (Int, Any?) -> Unit) {
         this.event = event
     }

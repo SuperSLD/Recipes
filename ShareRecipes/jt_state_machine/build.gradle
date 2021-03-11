@@ -1,0 +1,41 @@
+plugins {
+    id 'java-library'
+    id 'kotlin'
+    id 'maven-publish'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_7
+    targetCompatibility = JavaVersion.VERSION_1_7
+}
+
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from components.java
+
+            groupId = 'online.jutter.supersld'
+            artifactId = 'jt_state_machine'
+            version = '1.0.002'
+        }
+    }
+
+    repositories {
+        maven {
+            credentials {
+                username 'leon'
+                password '299792458'
+            }
+            url "http://77.244.65.113:8081/repository/maven-releases/"
+        }
+    }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+}

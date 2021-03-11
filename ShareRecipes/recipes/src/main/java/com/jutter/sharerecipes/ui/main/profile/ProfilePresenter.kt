@@ -1,9 +1,6 @@
 package com.jutter.sharerecipes.ui.main.profile
 
 import android.content.Context
-import android.database.Cursor
-import android.net.Uri
-import android.provider.MediaStore
 import android.widget.Toast
 import com.arellomobile.mvp.InjectViewState
 import com.jutter.sharerecipes.R
@@ -15,7 +12,6 @@ import com.jutter.sharerecipes.common.enums.DeeplinkType
 import com.jutter.sharerecipes.comtrollers.BottomVisibilityController
 import com.jutter.sharerecipes.comtrollers.DeeplinkOpenController
 import com.jutter.sharerecipes.comtrollers.PickPhotoController
-import com.jutter.sharerecipes.extensions.getRealPathFromURI
 import com.jutter.sharerecipes.extensions.mappers.toUserHuman
 import com.jutter.sharerecipes.extensions.saveAuthState
 import com.jutter.sharerecipes.server.ApiService
@@ -93,7 +89,7 @@ class ProfilePresenter : BasePresenter<ProfileView>() {
                     {
                         Timber.e(it)
                     }
-                )
+                ).connect()
     }
 
     private fun loadProfile() {
@@ -113,7 +109,7 @@ class ProfilePresenter : BasePresenter<ProfileView>() {
                 {
                     Timber.e(it)
                 }
-            )
+            ).connect()
     }
 
     private fun returnToAuth() {

@@ -2,14 +2,9 @@ package com.jutter.sharerecipes.ui.main.list.user_recipes.create_recipes.select_
 
 import android.annotation.SuppressLint
 import android.view.View
-import android.widget.CheckBox
-import android.widget.ImageView
-import android.widget.TextView
 import com.jutter.sharerecipes.common.base.BaseViewHolder
 import com.jutter.sharerecipes.models.human.IngradientHuman
 import kotlinx.android.synthetic.main.item_select_ingradient.view.*
-import kotlinx.android.synthetic.main.item_tape_header.view.*
-import timber.log.Timber
 
 class IngradientHolder(
         itemView: View,

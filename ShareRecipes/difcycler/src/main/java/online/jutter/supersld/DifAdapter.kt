@@ -1,9 +1,9 @@
-package com.jutter.difcycler
+package online.jutter.supersld
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.jutter.difcycler.base.DFBaseHolder
-import com.jutter.difcycler.base.HolderFactory
+import online.jutter.supersld.base.DFBaseHolder
+import online.jutter.supersld.base.HolderFactory
 
 /**
  * Адаптер для разных элементов.

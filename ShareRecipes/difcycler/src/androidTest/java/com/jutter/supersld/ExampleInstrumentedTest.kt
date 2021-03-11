@@ -1,4 +1,4 @@
-package com.jutter.difcycler
+package com.jutter.supersld
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

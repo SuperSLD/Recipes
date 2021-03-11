@@ -1,7 +1,6 @@
 package com.jutter.sharerecipes.models.human
 
 import android.os.Parcelable
-import com.jutter.sharerecipes.models.server.RecipesResponse
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize

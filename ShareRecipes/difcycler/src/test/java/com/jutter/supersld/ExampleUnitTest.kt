@@ -1,4 +1,4 @@
-package com.jutter.difcycler
+package com.jutter.supersld
 
 import org.junit.Test
 

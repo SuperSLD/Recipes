@@ -1,6 +1,5 @@
 package com.jutter.sharerecipes.common.base
 
-import android.opengl.Visibility
 import android.os.Bundle
 import android.os.Handler
 import android.view.LayoutInflater
@@ -8,13 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import com.arellomobile.mvp.MvpAppCompatFragment
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.button.MaterialButton
 import com.raspisanie.mai.extesions.addSystemTopPadding
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.disposables.Disposable
 import kotlinx.android.synthetic.main.layout_toolbar.*
-import timber.log.Timber
 
 open class BaseFragment(private val layoutRes: Int) : MvpAppCompatFragment() {
 

@@ -3,19 +3,15 @@ package com.jutter.sharerecipes.ui.main.list
 import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.arellomobile.mvp.MvpView
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.jutter.sharerecipes.R
 import com.jutter.sharerecipes.common.base.BaseFragment
 import com.jutter.sharerecipes.models.human.RecipesHuman
 import com.jutter.sharerecipes.models.human.RecommendationHuman
-import com.jutter.sharerecipes.ui.main.list.holders.TapeHolderFactory
 import com.raspisanie.mai.extesions.addSystemTopPadding
 import kotlinx.android.synthetic.main.fragment_tape.*
-import kotlinx.android.synthetic.main.fragment_user_recipes.*
 import kotlinx.android.synthetic.main.layout_loading_container.*
 import kotlinx.android.synthetic.main.layout_tape_shimmer.*
-import kotlinx.android.synthetic.main.layout_tape_shimmer.view.*
 
 class TapeFragment : BaseFragment(R.layout.fragment_tape), TapeView {
 

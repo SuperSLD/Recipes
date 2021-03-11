@@ -8,14 +8,11 @@ import com.arellomobile.mvp.presenter.InjectPresenter
 import com.arellomobile.mvp.presenter.ProvidePresenter
 import com.jutter.sharerecipes.R
 import com.jutter.sharerecipes.common.base.BaseFragment
-import com.jutter.sharerecipes.common.base.BaseView
 import com.jutter.sharerecipes.models.human.RecipesHuman
 import com.raspisanie.mai.extesions.addSystemBottomPadding
 import com.raspisanie.mai.extesions.addSystemTopPadding
 import kotlinx.android.synthetic.main.fragment_login.cvBack
 import kotlinx.android.synthetic.main.fragment_recipes_detail.*
-import kotlinx.android.synthetic.main.fragment_select_components.*
-import kotlinx.android.synthetic.main.fragment_user_recipes.*
 import kotlinx.android.synthetic.main.layout_loading_container.*
 
 class RecipesDetailFragment : BaseFragment(R.layout.fragment_recipes_detail), RecipesDetailView {

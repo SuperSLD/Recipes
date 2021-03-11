@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
+    id 'maven-publish'
 }
 
 android {
@@ -31,6 +32,54 @@ android {
         jvmTarget = '1.8'
     }
 }
+
+task androidJavadocs(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+    android.libraryVariants.all { variant ->
+        if (variant.name == 'release') {
+            owner.classpath += variant.javaCompileProvider.get().classpath
+        }
+    }
+    exclude '**/R.html', '**/R.*.html', '**/index.html'
+}
+
+task androidJavadocsJar(type: Jar, dependsOn: androidJavadocs) {
+    archiveClassifier.set('javadoc')
+    from androidJavadocs.destinationDir
+}
+
+task androidSourcesJar(type: Jar) {
+    archiveClassifier.set('sources')
+    from android.sourceSets.main.java.srcDirs
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+
+                //artifact androidJavadocsJar
+                artifact androidSourcesJar
+
+                groupId = 'online.jutter.supersld'
+                artifactId = 'diffcycler'
+                version = '1.0.013'
+            }
+        }
+        repositories {
+            maven {
+                credentials {
+                    username 'leon'
+                    password '299792458'
+                }
+                url "http://77.244.65.113:8081/repository/maven-releases/"
+            }
+        }
+    }
+}
+
 
 dependencies {
 

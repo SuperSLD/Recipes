@@ -1,12 +1,10 @@
 package com.jutter.sharerecipes.ui.main.list.holders
 
 import android.view.View
-import com.jutter.difcycler.base.DFBaseHolder
-import com.jutter.difcycler.base.HolderLayout
+import online.jutter.supersld.base.DFBaseHolder
+import online.jutter.supersld.base.HolderLayout
 import com.jutter.sharerecipes.R
-import com.jutter.sharerecipes.common.base.BaseViewHolder
 import com.jutter.sharerecipes.ui.main.list.TapeAdapter
-import kotlinx.android.synthetic.main.item_tape_header.view.*
 
 @HolderLayout(layout = R.layout.item_user_recipes)
 class UserRecipesHolder(

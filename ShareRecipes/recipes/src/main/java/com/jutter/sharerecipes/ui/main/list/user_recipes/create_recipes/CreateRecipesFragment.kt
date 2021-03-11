@@ -13,11 +13,9 @@ import com.jutter.sharerecipes.models.human.IngradientHuman
 import com.raspisanie.mai.extesions.addSystemBottomPadding
 import kotlinx.android.synthetic.main.fragment_create_recipes.*
 import kotlinx.android.synthetic.main.fragment_create_recipes.nested
-import kotlinx.android.synthetic.main.fragment_recipes_detail.*
 import kotlinx.android.synthetic.main.fragment_user_recipes.include_toolbar
 import kotlinx.android.synthetic.main.layout_loading_container.*
 import kotlinx.android.synthetic.main.layout_toolbar_search.view.*
-import kotlinx.android.synthetic.main.fragment_recipes_detail.rvSteps as rvSteps1
 
 
 class CreateRecipesFragment : BaseFragment(R.layout.fragment_create_recipes), CreateRecipesView {

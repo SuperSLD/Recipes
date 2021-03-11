@@ -1,3 +1,4 @@
+include ':jt_state_machine'
 include ':difcycler'
 include ':recipes'
 rootProject.name = "ShareRecipes"

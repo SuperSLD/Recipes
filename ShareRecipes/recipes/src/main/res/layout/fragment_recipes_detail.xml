@@ -35,9 +35,9 @@
                     <ImageView
                         android:layout_width="42dp"
                         android:layout_height="42dp"
-                        android:tint="@color/colorTextWhite"
                         app:srcCompat="@drawable/ic_arrow_back"
-                        android:layout_gravity="center"/>
+                        android:layout_gravity="center"
+                        app:tint="@color/colorTextWhite" />
                 </com.google.android.material.card.MaterialCardView>
 
                 <TextView

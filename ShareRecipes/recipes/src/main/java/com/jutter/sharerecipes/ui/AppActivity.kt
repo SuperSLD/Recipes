@@ -19,7 +19,6 @@ import com.jutter.sharerecipes.common.enums.DeeplinkType
 import com.jutter.sharerecipes.comtrollers.DeeplinkOpenController
 import com.jutter.sharerecipes.extensions.getIsDayTheme
 import com.jutter.sharerecipes.extensions.hideKeyboard
-import net.yslibrary.android.keyboardvisibilityevent.util.UIUtil.hideKeyboard
 import org.koin.android.ext.android.inject
 import timber.log.Timber
 

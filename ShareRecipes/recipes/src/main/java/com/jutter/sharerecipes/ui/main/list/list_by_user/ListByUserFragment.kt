@@ -2,39 +2,22 @@ package com.jutter.sharerecipes.ui.main.list.list_by_user
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import android.view.View
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.arellomobile.mvp.MvpView
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.arellomobile.mvp.presenter.ProvidePresenter
 import com.jutter.sharerecipes.R
 import com.jutter.sharerecipes.common.base.BaseFragment
-import com.jutter.sharerecipes.common.base.BaseView
 import com.jutter.sharerecipes.models.human.ListByUserHuman
-import com.jutter.sharerecipes.models.human.RecipesHuman
-import com.jutter.sharerecipes.models.human.UserHuman
-import com.jutter.sharerecipes.ui.auth.start.StartPresenter
-import com.jutter.sharerecipes.ui.main.list.recipes_detail.RecipesDetailFragment
-import com.jutter.sharerecipes.ui.main.list.user_recipes.create_recipes.select_components.SelectComponentsAdapter
 import com.raspisanie.mai.extesions.addSystemBottomPadding
-import com.raspisanie.mai.extesions.addSystemTopAndBottomPadding
 import com.raspisanie.mai.extesions.addSystemTopPadding
-import kotlinx.android.synthetic.main.fragment_login.*
-import kotlinx.android.synthetic.main.fragment_select_components.*
-import kotlinx.android.synthetic.main.fragment_start.*
 import kotlinx.android.synthetic.main.fragment_user_recipes.*
 import kotlinx.android.synthetic.main.fragment_user_recipes.container
 import kotlinx.android.synthetic.main.fragment_user_recipes.include_toolbar
-import kotlinx.android.synthetic.main.item_search_line.*
 import kotlinx.android.synthetic.main.layout_loading_container.*
 import kotlinx.android.synthetic.main.layout_tape_shimmer.*
 import kotlinx.android.synthetic.main.layout_toolbar_search.view.*
-import java.util.*
-import kotlinx.android.synthetic.main.fragment_login.container as container1
-import kotlinx.android.synthetic.main.fragment_start.btnLogin as btnLogin1
 
 class ListByUserFragment : BaseFragment(R.layout.fragment_list_by_user), ListByUserView {
 

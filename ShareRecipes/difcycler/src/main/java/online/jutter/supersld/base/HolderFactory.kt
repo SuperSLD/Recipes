@@ -1,10 +1,10 @@
-package com.jutter.difcycler.base
+package online.jutter.supersld.base
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import com.jutter.difcycler.exceptions.FactoryCallbackException
-import com.jutter.difcycler.exceptions.HolderCreateException
-import com.jutter.difcycler.exceptions.TypeNotFoundException
+import androidx.annotation.CallSuper
+import online.jutter.supersld.exceptions.HolderCreateException
+import online.jutter.supersld.exceptions.TypeNotFoundException
 import java.lang.Exception
 
 /**
@@ -23,6 +23,7 @@ class HolderFactory(
      *
      * @param event калбек.
      */
+    @CallSuper
     fun onEvent(event: (Int, Any?) -> Unit): HolderFactory {
         this.event = event
         return this
@@ -43,7 +44,9 @@ class HolderFactory(
                 layout = annotation.layout
             }
         }
-        if (layout < 0) throw HolderCreateException("layout not found in ${clazz.name}, check @HolderLayout annotation")
+        if (layout < 0) throw HolderCreateException(
+            "layout not found in ${clazz.name}, check @HolderLayout annotation"
+        )
         try {
             holderDF = clazz.constructors[0].newInstance(
                 LayoutInflater.from(parent.context).inflate(layout, parent, false)

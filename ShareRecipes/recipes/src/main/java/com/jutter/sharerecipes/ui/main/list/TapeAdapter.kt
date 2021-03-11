@@ -1,12 +1,9 @@
 package com.jutter.sharerecipes.ui.main.list
 
-import android.view.ViewGroup
-import androidx.recyclerview.widget.RecyclerView
-import com.jutter.difcycler.DifAdapter
-import com.jutter.difcycler.base.DFBaseHolder
-import com.jutter.difcycler.base.HolderFactory
+import online.jutter.supersld.DifAdapter
+import online.jutter.supersld.base.DFBaseHolder
+import online.jutter.supersld.base.HolderFactory
 import com.jutter.sharerecipes.R
-import com.jutter.sharerecipes.common.base.BaseViewHolder
 import com.jutter.sharerecipes.models.human.RecipesHuman
 import com.jutter.sharerecipes.models.human.RecommendationHuman
 import com.jutter.sharerecipes.ui.main.list.holders.*
@@ -32,13 +29,15 @@ class TapeAdapter(
     private val list = mutableListOf<Pair<Int, Any?>>()
 
     override fun initFactory(): HolderFactory {
-        return HolderFactory(hashMapOf(
-            SEARCH_BY_INGRADIENTS_HOLDER to SearchByIngradientsHolder::class.java,
-            HEADER_HOLDER to TapeTitleHolder::class.java,
-            USER_RECIPES_HOLDER to UserRecipesHolder::class.java,
-            TOP_HOLDER to TapeRecipesScrollHolder::class.java,
-            REC_HOLDER to TapeRecipesBigHolder::class.java
-        ))
+        return HolderFactory(
+            hashMapOf(
+                SEARCH_BY_INGRADIENTS_HOLDER to SearchByIngradientsHolder::class.java,
+                HEADER_HOLDER to TapeTitleHolder::class.java,
+                USER_RECIPES_HOLDER to UserRecipesHolder::class.java,
+                TOP_HOLDER to TapeRecipesScrollHolder::class.java,
+                REC_HOLDER to TapeRecipesBigHolder::class.java
+            )
+        )
         .onEvent{ id, data ->
             when(id) {
                 USER_RECIPES_CLICK_EVENT -> userRecipes()

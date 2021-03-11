@@ -13,6 +13,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/difcycler" />
+            <option value="$PROJECT_DIR$/jt_state_machine" />
             <option value="$PROJECT_DIR$/recipes" />
           </set>
         </option>

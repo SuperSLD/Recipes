@@ -4,7 +4,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.jutter.sharerecipes.R
 import com.jutter.sharerecipes.common.CiceroneHolder
-import com.jutter.sharerecipes.common.base.BaseFragment
 import org.koin.android.ext.android.inject
 import ru.terrakok.cicerone.Navigator
 import ru.terrakok.cicerone.android.support.SupportAppNavigator

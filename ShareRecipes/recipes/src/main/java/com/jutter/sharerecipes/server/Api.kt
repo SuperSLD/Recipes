@@ -1,7 +1,6 @@
 package com.jutter.sharerecipes.server
 
 import com.jutter.sharerecipes.models.DataWrapper
-import com.jutter.sharerecipes.models.human.CategoryHuman
 import com.jutter.sharerecipes.models.server.*
 import io.reactivex.rxjava3.core.Single
 import okhttp3.MultipartBody

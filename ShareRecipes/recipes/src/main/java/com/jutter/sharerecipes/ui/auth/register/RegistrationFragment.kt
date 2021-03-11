@@ -4,19 +4,14 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
-import com.arellomobile.mvp.MvpView
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.jutter.sharerecipes.R
 import com.jutter.sharerecipes.common.base.BaseFragment
 import com.jutter.sharerecipes.common.base.BaseView
-import com.jutter.sharerecipes.ui.auth.start.StartPresenter
 import com.raspisanie.mai.extesions.addSystemTopAndBottomPadding
-import com.raspisanie.mai.extesions.addSystemTopPadding
 import kotlinx.android.synthetic.main.fragment_login.*
 import kotlinx.android.synthetic.main.fragment_start.*
 import kotlinx.android.synthetic.main.layout_loading_container.*
-import java.util.*
-import kotlinx.android.synthetic.main.fragment_start.btnLogin as btnLogin1
 
 class RegistrationFragment : BaseFragment(R.layout.fragment_register), BaseView {
 

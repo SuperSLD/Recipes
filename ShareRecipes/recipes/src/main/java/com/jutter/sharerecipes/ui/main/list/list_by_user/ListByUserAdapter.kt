@@ -1,8 +1,8 @@
 package com.jutter.sharerecipes.ui.main.list.list_by_user
 
-import com.jutter.difcycler.DifAdapter
-import com.jutter.difcycler.base.DFBaseHolder
-import com.jutter.difcycler.base.HolderFactory
+import online.jutter.supersld.DifAdapter
+import online.jutter.supersld.base.DFBaseHolder
+import online.jutter.supersld.base.HolderFactory
 import com.jutter.sharerecipes.models.human.RecipesHuman
 import com.jutter.sharerecipes.models.human.UserHuman
 import com.jutter.sharerecipes.ui.main.list.list_by_user.holders.ItemHolder
@@ -22,10 +22,11 @@ class ListByUserAdapter (
     private val list = mutableListOf<RecipesHuman>()
 
     override fun initFactory(): HolderFactory {
-        return HolderFactory(hashMapOf(
-            PROFILE_HOLDER to ItemProfileHolder::class.java,
-            ITEM_HOLDER to ItemHolder::class.java
-        )
+        return HolderFactory(
+            hashMapOf(
+                PROFILE_HOLDER to ItemProfileHolder::class.java,
+                ITEM_HOLDER to ItemHolder::class.java
+            )
         )
         .onEvent { id, data ->
             when(id) {

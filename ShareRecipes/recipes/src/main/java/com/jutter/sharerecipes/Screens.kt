@@ -4,7 +4,6 @@ package com.jutter.sharerecipes
 import androidx.fragment.app.Fragment
 import com.jutter.sharerecipes.models.human.IngradientHuman
 import com.jutter.sharerecipes.models.human.RecipesHuman
-import com.jutter.sharerecipes.models.human.UserHuman
 import com.jutter.sharerecipes.ui.auth.FlowAuthFragment
 import com.jutter.sharerecipes.ui.auth.login.LoginFragment
 import com.jutter.sharerecipes.ui.auth.register.RegistrationFragment

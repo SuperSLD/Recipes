@@ -1,12 +1,10 @@
 package com.jutter.sharerecipes.ui.main
 
 import com.arellomobile.mvp.InjectViewState
-import com.jutter.sharerecipes.common.enums.DeeplinkType
 import com.jutter.sharerecipes.comtrollers.BottomVisibilityController
 import com.jutter.sharerecipes.comtrollers.ChangeBottomTabController
 import com.jutter.sharerecipes.comtrollers.DeeplinkOpenController
 import com.raspisanie.mai.common.base.BasePresenter
-import com.jutter.sharerecipes.ui.main.MainContainerView
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.schedulers.Schedulers
 import org.koin.core.inject

@@ -4,8 +4,6 @@ import com.arellomobile.mvp.viewstate.strategy.AddToEndSingleStrategy
 import com.arellomobile.mvp.viewstate.strategy.StateStrategyType
 import com.jutter.sharerecipes.common.base.BaseView
 import com.jutter.sharerecipes.models.human.CategoryHuman
-import com.jutter.sharerecipes.models.human.IngradientHuman
-import com.jutter.sharerecipes.models.server.CategoryResponse
 
 interface SelectComponentsView: BaseView {
     @StateStrategyType(AddToEndSingleStrategy::class)

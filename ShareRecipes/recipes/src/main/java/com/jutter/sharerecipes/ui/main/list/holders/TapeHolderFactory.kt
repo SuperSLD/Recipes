@@ -1,10 +1,6 @@
 package com.jutter.sharerecipes.ui.main.list.holders
 
-import android.view.LayoutInflater
-import android.view.ViewGroup
-import com.jutter.sharerecipes.R
 import com.jutter.sharerecipes.common.base.BaseHolderFactory
-import com.jutter.sharerecipes.common.base.BaseViewHolder
 
 class TapeHolderFactory: BaseHolderFactory() {
     companion object {

@@ -5,7 +5,6 @@ import com.arellomobile.mvp.viewstate.strategy.StateStrategyType
 import com.jutter.sharerecipes.common.base.BaseView
 import com.jutter.sharerecipes.models.human.IngradientHuman
 import com.jutter.sharerecipes.models.human.RecipesHuman
-import com.jutter.sharerecipes.ui.main.list.user_recipes.create_recipes.select_components.holders.IngradientHolder
 
 interface SearchByIngradientsView: BaseView {
     @StateStrategyType(AddToEndSingleStrategy::class)

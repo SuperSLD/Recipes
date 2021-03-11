@@ -1,34 +1,20 @@
 package com.jutter.sharerecipes.ui.main.list.user_recipes
 
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.arellomobile.mvp.MvpView
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.jutter.sharerecipes.R
 import com.jutter.sharerecipes.common.base.BaseFragment
-import com.jutter.sharerecipes.common.base.BaseView
 import com.jutter.sharerecipes.models.human.RecipesHuman
-import com.jutter.sharerecipes.ui.auth.start.StartPresenter
-import com.jutter.sharerecipes.ui.main.list.user_recipes.create_recipes.select_components.SelectComponentsAdapter
 import com.raspisanie.mai.extesions.addSystemBottomPadding
-import com.raspisanie.mai.extesions.addSystemTopAndBottomPadding
 import com.raspisanie.mai.extesions.addSystemTopPadding
-import kotlinx.android.synthetic.main.fragment_login.*
-import kotlinx.android.synthetic.main.fragment_select_components.*
-import kotlinx.android.synthetic.main.fragment_start.*
 import kotlinx.android.synthetic.main.fragment_user_recipes.*
 import kotlinx.android.synthetic.main.fragment_user_recipes.container
 import kotlinx.android.synthetic.main.fragment_user_recipes.include_toolbar
-import kotlinx.android.synthetic.main.item_search_line.*
 import kotlinx.android.synthetic.main.layout_loading_container.*
 import kotlinx.android.synthetic.main.layout_tape_shimmer.*
 import kotlinx.android.synthetic.main.layout_toolbar_search.view.*
-import java.util.*
-import kotlinx.android.synthetic.main.fragment_login.container as container1
-import kotlinx.android.synthetic.main.fragment_start.btnLogin as btnLogin1
 
 class UserRecipesFragment : BaseFragment(R.layout.fragment_user_recipes), UserRecipesView {
 

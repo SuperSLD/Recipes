@@ -54,8 +54,8 @@
             <ImageView
                 android:layout_width="18dp"
                 android:layout_height="18dp"
-                android:tint="@color/colorTextWhite"
-                app:srcCompat="@drawable/ic_like"/>
+                app:srcCompat="@drawable/ic_like"
+                app:tint="@color/colorTextWhite" />
         </LinearLayout>
     </LinearLayout>
 

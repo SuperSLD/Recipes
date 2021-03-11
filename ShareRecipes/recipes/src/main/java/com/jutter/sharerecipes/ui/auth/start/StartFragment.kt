@@ -6,7 +6,6 @@ import com.arellomobile.mvp.MvpView
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.jutter.sharerecipes.R
 import com.jutter.sharerecipes.common.base.BaseFragment
-import com.jutter.sharerecipes.ui.auth.start.StartPresenter
 import kotlinx.android.synthetic.main.fragment_start.*
 import java.util.*
 

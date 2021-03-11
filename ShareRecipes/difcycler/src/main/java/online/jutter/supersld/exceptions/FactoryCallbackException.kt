@@ -1,4 +1,4 @@
-package com.jutter.difcycler.exceptions
+package online.jutter.supersld.exceptions
 
 /**
  * Ошибка при создании холдера, без калбеков.

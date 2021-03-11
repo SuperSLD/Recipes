@@ -1,24 +1,17 @@
 package com.jutter.sharerecipes.ui.main.list.list_by_user
 
 import android.content.Context
-import android.widget.EditText
 import android.widget.Toast
 import com.arellomobile.mvp.InjectViewState
 import com.jutter.sharerecipes.Screens
 import com.jutter.sharerecipes.common.CiceroneHolder
-import com.jutter.sharerecipes.common.base.BaseView
 import com.jutter.sharerecipes.common.base.BottomSheetDialogController
 import com.jutter.sharerecipes.common.enums.BottomSheetDialogType
 import com.jutter.sharerecipes.comtrollers.BottomVisibilityController
 import com.jutter.sharerecipes.extensions.mappers.toListByUserHuman
-import com.jutter.sharerecipes.extensions.mappers.toRecipesHumanList
-import com.jutter.sharerecipes.models.server.LoginBody
 import com.jutter.sharerecipes.server.ApiService
 import com.raspisanie.mai.common.base.BasePresenter
-import com.jutter.sharerecipes.extensions.saveAuthState
-import com.jutter.sharerecipes.extensions.saveToken
 import com.jutter.sharerecipes.models.human.RecipesHuman
-import com.jutter.sharerecipes.models.human.UserHuman
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.schedulers.Schedulers
 import org.koin.core.inject

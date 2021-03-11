@@ -2,11 +2,9 @@ package com.jutter.sharerecipes.ui.main.list.user_recipes.create_recipes.select_
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.jutter.sharerecipes.R
 import com.jutter.sharerecipes.common.base.BaseViewHolder
 import com.jutter.sharerecipes.models.human.CategoryHuman
 import com.jutter.sharerecipes.models.human.IngradientHuman
-import com.jutter.sharerecipes.ui.main.list.holders.TapeHolderFactory
 import com.jutter.sharerecipes.ui.main.list.user_recipes.create_recipes.select_components.holders.SelectComponentHolderFactory
 
 class SelectComponentsAdapter : RecyclerView.Adapter<BaseViewHolder>() {

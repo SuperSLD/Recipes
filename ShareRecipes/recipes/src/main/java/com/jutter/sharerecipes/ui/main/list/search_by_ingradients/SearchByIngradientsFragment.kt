@@ -8,7 +8,6 @@ import com.jutter.sharerecipes.R
 import com.jutter.sharerecipes.common.base.BaseFragment
 import com.jutter.sharerecipes.models.human.IngradientHuman
 import com.jutter.sharerecipes.models.human.RecipesHuman
-import com.jutter.sharerecipes.ui.main.list.user_recipes.create_recipes.select_components.HeaderComponentsAdapter
 import com.raspisanie.mai.extesions.addSystemBottomPadding
 import com.raspisanie.mai.extesions.addSystemTopPadding
 import kotlinx.android.synthetic.main.fragment_select_components.*

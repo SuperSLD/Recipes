@@ -39,7 +39,7 @@ class ProfilePresenter : BasePresenter<ProfileView>() {
     private val deeplinkOpenController: DeeplinkOpenController by inject()
 
     private val mainCicerone: Cicerone<Router>?
-        get() = navigationHolder.getCicerone(Screens.APP_ROUTER)
+        get() = navigationHolder.getCicerone(containerTag = Screens.APP_ROUTER)
 
     private val router: Router?
         get() = navigationHolder.currentRouter

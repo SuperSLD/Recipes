@@ -13,6 +13,9 @@ abstract class DFBaseHolder(itemView: View) : RecyclerView.ViewHolder(itemView) 
 
     private var event = { _:Int, _:Any?->}
 
+    private var mPosition = 0
+    private var mListSize = 0
+
     /**
      * Связка данных с ходером.
      * Каждая реализация самостоятельно решает какой
@@ -46,4 +49,19 @@ abstract class DFBaseHolder(itemView: View) : RecyclerView.ViewHolder(itemView) 
     fun onEvent(event: (Int, Any?) -> Unit) {
         this.event = event
     }
+
+    /**
+     * Передача длинны списка и позиции.
+     * @param size длинна списка.
+     * @param position индекс забинженого элемента.
+     */
+    fun setSizeAndPosition(size: Int, position: Int) {
+        this.mPosition = position
+        this.mListSize = size
+    }
+
+    /**  Получение позиции в списке  */
+    fun getPositionInList() = mPosition
+    /**  Получение длинны списка  */
+    fun getListSize() = mListSize
 }

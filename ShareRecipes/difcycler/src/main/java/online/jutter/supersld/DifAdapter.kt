@@ -1,6 +1,7 @@
 package online.jutter.supersld
 
 import android.view.ViewGroup
+import androidx.annotation.CallSuper
 import androidx.recyclerview.widget.RecyclerView
 import online.jutter.supersld.base.DFBaseHolder
 import online.jutter.supersld.base.HolderFactory

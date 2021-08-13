@@ -3,6 +3,7 @@ package online.jutter.supersld.base
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.annotation.CallSuper
+import online.jutter.supersld.DifAdapter
 import online.jutter.supersld.exceptions.HolderCreateException
 import online.jutter.supersld.exceptions.TypeNotFoundException
 import java.lang.Exception
@@ -17,6 +18,7 @@ class HolderFactory(
 ) {
 
     private var event = {_:Int,_:Any?->}
+    private var mAdapter: DifAdapter? = null
 
     /**
      * Установка калбэка для собтытий холдера.
@@ -27,6 +29,16 @@ class HolderFactory(
     fun onEvent(event: (Int, Any?) -> Unit): HolderFactory {
         this.event = event
         return this
+    }
+
+    /**
+     * Установка адаптера для которгого будут
+     * создаваться элемены.
+     *
+     * @param adapter
+     */
+    fun setAdapter(adapter: DifAdapter) {
+        this.mAdapter = adapter
     }
 
     /**
@@ -57,6 +69,7 @@ class HolderFactory(
         holderDF.onEvent { id, data ->
             event(id, data)
         }
+        holderDF.setAdapter(mAdapter!!)
         return holderDF
     }
 }

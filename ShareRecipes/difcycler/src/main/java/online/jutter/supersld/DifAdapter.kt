@@ -7,7 +7,8 @@ import online.jutter.supersld.base.DFBaseHolder
 import online.jutter.supersld.base.HolderFactory
 
 /**
- * Адаптер для разных элементов.
+ * Адаптер для создания списков
+ * из разных элементов.
  *
  * @author Leonid Solyanoy (solyanoy.leonid@gmail.com)
  */
@@ -18,6 +19,7 @@ abstract class DifAdapter: RecyclerView.Adapter<DFBaseHolder>() {
     init {
         @Suppress("LeakingThis")
         holderFactory = initFactory()
+        holderFactory?.setAdapter(this)
     }
 
     /**

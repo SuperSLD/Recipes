@@ -1,5 +1,6 @@
 package com.jutter.sharerecipes.ui.main.list
 
+import android.annotation.SuppressLint
 import online.jutter.supersld.DifAdapter
 import online.jutter.supersld.base.DFBaseHolder
 import online.jutter.supersld.base.HolderFactory

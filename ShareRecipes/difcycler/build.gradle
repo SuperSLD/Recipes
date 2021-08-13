@@ -65,7 +65,7 @@ afterEvaluate {
 
                 groupId = 'online.jutter.supersld'
                 artifactId = 'diffcycler'
-                version = '1.1.7'
+                version = '1.1.10'
             }
         }
         repositories {

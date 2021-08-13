@@ -3,6 +3,7 @@ package online.jutter.supersld.base
 import android.view.View
 import androidx.annotation.CallSuper
 import androidx.recyclerview.widget.RecyclerView
+import online.jutter.supersld.DifAdapter
 
 /**
  * Абстракный холдер.
@@ -13,8 +14,7 @@ abstract class DFBaseHolder(itemView: View) : RecyclerView.ViewHolder(itemView) 
 
     private var event = { _:Int, _:Any?->}
 
-    private var mPosition = 0
-    private var mListSize = 0
+    private var mAdapter: DifAdapter? = null
 
     /**
      * Связка данных с ходером.
@@ -50,18 +50,14 @@ abstract class DFBaseHolder(itemView: View) : RecyclerView.ViewHolder(itemView) 
         this.event = event
     }
 
-    /**
-     * Передача длинны списка и позиции.
-     * @param size длинна списка.
-     * @param position индекс забинженого элемента.
+    /** Передача адаптера в холжер.
+     *  Вызывается автоматически при создании элемента.
+     *
+     *  @param diffAdapter родительский адаптер
      */
-    fun setSizeAndPosition(size: Int, position: Int) {
-        this.mPosition = position
-        this.mListSize = size
+    fun setAdapter(diffAdapter: DifAdapter) {
+        this.mAdapter = diffAdapter
     }
-
-    /**  Получение позиции в списке  */
-    fun getPositionInList() = mPosition
-    /**  Получение длинны списка  */
-    fun getListSize() = mListSize
+    /** получение адаптера */
+    fun getAdapter() = mAdapter
 }
